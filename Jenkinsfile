@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     environment {
-        AWS_REGION     = "ap-south-1"          // change to your region
-        AWS_ACCOUNT_ID = "123456789012"        // change to your account ID
+        AWS_REGION     = "ap-south-1"
+        AWS_ACCOUNT_ID = "172021821628"
         ECR_REPOSITORY = "php-app-demo"
         IMAGE_URI      = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPOSITORY}:latest"
     }
 
-
+    stages {
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t php-app-demo .'
