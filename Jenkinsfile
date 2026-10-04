@@ -12,7 +12,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/YOUR_USERNAME/php-docker-demo.git'
+                    url: 'https://github.com/giridhar-pj/php-docker-demo.git'
             }
         }
 
