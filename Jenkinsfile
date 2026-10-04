@@ -8,13 +8,6 @@ pipeline {
         IMAGE_URI      = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPOSITORY}:latest"
     }
 
-    stages {
-        stage('Clone Repository') {
-            steps {
-                git branch: 'main',
-                    url: 'https://github.com/giridhar-pj/php-docker-demo.git'
-            }
-        }
 
         stage('Build Docker Image') {
             steps {
